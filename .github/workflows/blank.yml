@@ -42,5 +42,8 @@ jobs:
     - name: commit changed files
       run: git commit -m "update by github actions"
       
+    - name: pull code
+      run: git pull
+      
     - name: push code
       run: git push origin contributor
