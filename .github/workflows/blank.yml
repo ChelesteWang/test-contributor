@@ -28,7 +28,7 @@ jobs:
       run: git config --global user.email ${{ matrix.email }} &&git config --global user.name ${{ matrix.name }}
 
     - name: checkout config
-      run: git checkout test-contributor
+      run: git checkout test
 
     - name: check for changes
       run: git status
