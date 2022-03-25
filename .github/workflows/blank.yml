@@ -37,4 +37,4 @@ jobs:
       run: git commit -m "update by github actions"
       
     - name: push code to master
-      run: git push origin main
+      run: git push origin ${{github.ref}}
