@@ -1,7 +1,4 @@
-test-contributor
 
-123
-6
 <!-- GITCONTRIBUTOR_START -->
 
 ## Contributors
