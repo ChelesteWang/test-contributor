@@ -1,8 +1,8 @@
 name: Generate contributors
 
 on:
-  pull_request:
-    branches: [ main ]
+  push:
+    branches: [ main , test ]
 
 jobs:
   generate:
