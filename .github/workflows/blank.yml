@@ -28,8 +28,9 @@ jobs:
       run: git config --global user.email ${{ matrix.email }} &&git config --global user.name ${{ matrix.name }}
 
     - name: checkout work branch
-      run: git checkout -b ${{github.ref}} 
-    
+
+      run: git checkout -b contributor
+
     - name: check for changes
       run: git status
       
@@ -39,5 +40,5 @@ jobs:
     - name: commit changed files
       run: git commit -m "update by github actions"
       
-    - name: push code to master
-      run: git push origin ${{github.ref}}
+    - name: push code
+      run: git push origin contributor
