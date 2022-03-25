@@ -1,8 +1,8 @@
 name: Generate contributors
 
 on:
-  push:
-    branches: [ main,test ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   generate:
@@ -27,6 +27,9 @@ jobs:
     - name: config git
       run: git config --global user.email ${{ matrix.email }} &&git config --global user.name ${{ matrix.name }}
 
+    - name: checkout work branch
+      run: git checkout -b ${{github.ref}} 
+    
     - name: check for changes
       run: git status
       
