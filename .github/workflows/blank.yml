@@ -27,17 +27,14 @@ jobs:
     - name: config git
       run: git config --global user.email ${{ matrix.email }} &&git config --global user.name ${{ matrix.name }}
 
-    - name: checkout config
-      run: git checkout test
-
     - name: check for changes
       run: git status
-
-    - name: commit code  
-      run: git commit -m "generate contributor by git-contributor" -a
-
-    - name: view commit
-      run: git remote -v
       
-    - name: push code
-      run: git push origin test-contributor
+    - name: stage changed files
+      run: git add .
+
+    - name: commit changed files
+      run: git commit -m "update by github actions"
+      
+    - name: push code to master
+      run: git push origin main
