@@ -3,12 +3,14 @@ name: Generate contributors
 on:
   pull_request:
     branches: [ main ]
+    types:
+      - closed
 
 jobs:
   generate:
-
+    
     runs-on: ubuntu-latest
-
+    if: github.event.pull_request.merged == true
     strategy:
       matrix:
         node-version: [12.x]
